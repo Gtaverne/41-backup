@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtaverne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 16:33:25 by gtaverne          #+#    #+#             */
-/*   Updated: 2020/09/09 16:58:20 by gtaverne         ###   ########.fr       */
+/*   Created: 2020/09/09 17:25:40 by gtaverne          #+#    #+#             */
+/*   Updated: 2020/09/09 18:00:57 by gtaverne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-w#include <unistd.h>
+#include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_print_alphabet(void)
 {
-    write(1, &c, 1);
+	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
 }
