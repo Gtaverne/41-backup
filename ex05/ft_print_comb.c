@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtaverne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 09:42:41 by gtaverne          #+#    #+#             */
-/*   Updated: 2020/09/10 13:50:01 by gtaverne         ###   ########.fr       */
+/*   Created: 2020/09/10 15:43:01 by gtaverne          #+#    #+#             */
+/*   Updated: 2020/09/10 15:43:25 by gtaverne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_print_comb(void)
 {
-	write(1, &c, 1);
-}
+	char centaine;
+	char dizaine;
+	char unite;
 
-void	ft_print_comb2(void)
-{
-	char lft;
-	char rgh;
-
-	lft = 0;
-	while (lft < 99)
+	centaine = '0';
+	dizaine = '1';
+	unite = '2';
+	while (centaine < '10')
 	{
-		rgh = lft + 1;
-		while (rgh < 100)
+		dizaine = centaine + '1';
+		while (dizaine < '10')
 		{
-			ft_putchar(lft / 10 + '0');
-			ft_putchar(lft % 10 + '0');
-			write(1, " ", 1);
-			ft_putchar(rgh / 10 + '0');
-			ft_putchar(rgh % 10 + '0');
-			write(1, ", ", 2);
-			rgh++;
+			unite = dizaine + '1';
+			while (unite < '10')
+			{
+				write(1, &centaine, 1);
+				write(1, &dizaine, 1);
+				write(1, &unite, 1);
+				write(1, ", ", 2);
+				unite++;
+			}
+			dizaine++;
 		}
-		lft++;
+		centaine++;
 	}
-	write(1, "98 99", 5);
 }

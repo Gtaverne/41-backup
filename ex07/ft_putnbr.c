@@ -1,42 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtaverne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 09:42:41 by gtaverne          #+#    #+#             */
-/*   Updated: 2020/09/10 13:50:01 by gtaverne         ###   ########.fr       */
+/*   Created: 2020/09/10 10:48:05 by gtaverne          #+#    #+#             */
+/*   Updated: 2020/09/10 13:21:07 by mlarboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar(char c);
+int		testsignornull(int a);
+void	ft_putnbr(int nb);
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_print_comb2(void)
+int		testsignornull(int a)
 {
-	char lft;
-	char rgh;
-
-	lft = 0;
-	while (lft < 99)
+	if (a < 0)
 	{
-		rgh = lft + 1;
-		while (rgh < 100)
-		{
-			ft_putchar(lft / 10 + '0');
-			ft_putchar(lft % 10 + '0');
-			write(1, " ", 1);
-			ft_putchar(rgh / 10 + '0');
-			ft_putchar(rgh % 10 + '0');
-			write(1, ", ", 2);
-			rgh++;
-		}
-		lft++;
+		ft_putchar('-');
+		a = -a;
 	}
-	write(1, "98 99", 5);
+	if (a == 0)
+	{
+		ft_putchar('0');
+	}
+	return (a);
+}
+
+void	ft_putnbr(int nb)
+{
+	int	pwr;
+	int	rest;
+
+	pwr = 1000000;
+	rest = testsignornull(nb);
+	while (rest < pwr)
+	{
+		pwr = pwr / 10;
+	}
+	while (pwr > 0)
+	{
+		ft_putchar(rest / pwr + '0');
+		rest = rest % pwr;
+		pwr = pwr / 10;
+	}
 }
