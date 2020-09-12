@@ -6,13 +6,13 @@
 /*   By: gtaverne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 09:42:41 by gtaverne          #+#    #+#             */
-/*   Updated: 2020/09/10 13:50:01 by gtaverne         ###   ########.fr       */
+/*   Updated: 2020/09/12 14:32:52 by gtaverne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	my_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -28,15 +28,17 @@ void	ft_print_comb2(void)
 		rgh = lft + 1;
 		while (rgh < 100)
 		{
-			ft_putchar(lft / 10 + '0');
-			ft_putchar(lft % 10 + '0');
+			my_putchar(lft / 10 + '0');
+			my_putchar(lft % 10 + '0');
 			write(1, " ", 1);
-			ft_putchar(rgh / 10 + '0');
-			ft_putchar(rgh % 10 + '0');
-			write(1, ", ", 2);
+			my_putchar(rgh / 10 + '0');
+			my_putchar(rgh % 10 + '0');
+			if (lft < 98)
+			{
+				write(1, ", ", 2);
+			}
 			rgh++;
 		}
 		lft++;
 	}
-	write(1, "98 99", 5);
 }

@@ -6,7 +6,7 @@
 /*   By: gtaverne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 15:43:01 by gtaverne          #+#    #+#             */
-/*   Updated: 2020/09/10 15:43:25 by gtaverne         ###   ########.fr       */
+/*   Updated: 2020/09/12 16:01:38 by gtaverne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,19 @@ void	ft_print_comb(void)
 	char unite;
 
 	centaine = '0';
-	dizaine = '1';
-	unite = '2';
-	while (centaine < '10')
+	while (centaine <= '7')
 	{
-		dizaine = centaine + '1';
-		while (dizaine < '10')
+		dizaine = centaine + 1;
+		while (dizaine <= '8')
 		{
-			unite = dizaine + '1';
-			while (unite < '10')
+			unite = dizaine + 1;
+			while (unite <= '9')
 			{
 				write(1, &centaine, 1);
 				write(1, &dizaine, 1);
 				write(1, &unite, 1);
-				write(1, ", ", 2);
+				if (centaine != '7')
+					write(1, ", ", 2);
 				unite++;
 			}
 			dizaine++;

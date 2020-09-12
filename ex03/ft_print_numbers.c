@@ -6,7 +6,7 @@
 /*   By: gtaverne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 18:47:57 by gtaverne          #+#    #+#             */
-/*   Updated: 2020/09/09 19:47:15 by gtaverne         ###   ########.fr       */
+/*   Updated: 2020/09/12 14:47:07 by gtaverne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void ft_print_numbers(void);
 
 void	ft_print_numbers(void)
 {
-	int i;
+	char i;
 
-	i = 0;
-	while (i < 10)
+	i = '0';
+	while (i <= '9')
 	{
 		write(1, &i, 1);
-		i = i++;
+		i++;
 	}
 }
